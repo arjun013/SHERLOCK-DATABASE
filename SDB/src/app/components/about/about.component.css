@@ -1,0 +1,60 @@
+.about{
+	color: white;
+	background: #0009;
+}
+
+h3{
+	padding: 20px 0;
+	text-align: center;
+	color: gold;
+	font-size: 20px;
+}
+
+.holmes {
+		display: flex;
+		flex-direction: column;
+} 
+.sherlock{
+	display: flex;
+	flex-direction: column-reverse;
+	padding:  20px 0;
+}
+img{
+	width:	100vw;
+	height: auto;
+}
+p{
+	font-size: 20px;
+}
+
+.img{
+	margin: auto;
+}
+.description{
+	padding: 10px;
+}
+
+@media (min-width: 900px){
+
+	h3{
+		font-size: 3rem;
+	}
+
+	.holmes , .sherlock{
+		flex-direction: row;		
+		padding:  20px 0;
+	}
+	img{
+		width:	49vw;
+	}
+	p{
+		font-size: 16px;
+	}
+}
+
+
+@media (min-width: 1200px){
+	p{
+		font-size: 20px;
+	}
+}

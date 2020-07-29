@@ -1,0 +1,61 @@
+
+.addEpisode{
+	min-height: 80vh;
+	width: 100%;
+	background: #0009;
+	display: flex;
+	color: white;
+}
+form{
+	margin: auto;
+	background: #000c;
+	padding: 30px;/*
+	display: flex;
+	flex-direction: column;*/
+}
+h2{
+	text-align: center;
+}
+hr{
+	margin: 10px 0;
+}
+
+input,select,textarea{
+	display: block;
+	width: 70vw;
+	height: 30px;
+	margin: 10px 0;
+	border: none;
+	outline: none;
+	padding: 0 20px;
+}
+
+textarea{
+	height: 60px;
+	padding: 5px 20px;
+}
+button{
+	display: block;
+	margin: auto;
+	width: 50%;
+	height: 30px;
+	background: #393520;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+button:hover{
+	opacity: .8;
+}
+button:disabled{
+
+	cursor: not-allowed;
+}
+
+@media (min-width: 700px){
+	input,select,textarea{
+		width: 50vw;
+	}
+}

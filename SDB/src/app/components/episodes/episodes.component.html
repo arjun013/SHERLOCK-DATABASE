@@ -1,0 +1,51 @@
+
+<div class="allEpisodes">
+
+	<form 	class="search"  >
+		<input 
+		type="text" 
+		name="searchBox"  
+		placeholder="search episode ..." 
+		(focusout)="hideAgain()"
+		(keyup)="searchEpisode()" 
+		[(ngModel)] = "searchWord"
+		>
+		<div
+		(mouseover)="hideResult=false" 
+		(mouseout)="hideResult=true"		 
+		(focusout)="searchWord=''"
+		*ngIf="searchWord">
+			<a 			
+			*ngFor ="let result of searchResult"
+			routerLink="/episode/{{result._id}}">
+				<h3 
+				class="result"> 
+				{{result.title}} - {{result.season}}
+				</h3>	
+			</a>	
+		</div>
+		
+
+	</form>
+
+	<div class="seasonList">
+		<div 
+		*ngFor ="let season of seasonWiseEpisodes; index as i" 
+		class="season">
+			<button type="button" 
+			(click) = "showEpisode[i] = !showEpisode[i]">
+				{{showEpisode[i]?"+":"~"}}
+			</button>
+			<h1 *ngIf="i<4">Season {{i+1}}</h1>
+			<h1 *ngIf="i===4">Special</h1>
+			<div 
+			*ngFor = "let episode of season;  index as j"
+			class="episode" 
+			[ngClass]="{'hideEpisodes' : showEpisode[i]==true}">
+				<h3>Episode {{j+1}} :
+					<a routerLink="/episode/{{episode._id}}">{{episode.title}}</a> </h3>
+			</div>
+		<!-- <hr> -->
+		</div>
+	</div>
+</div>

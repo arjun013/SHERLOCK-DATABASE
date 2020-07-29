@@ -1,0 +1,32 @@
+
+
+<div class="charRequests">
+
+		<h2 *ngIf ="!requestCharacters.length">No pending requests</h2>
+
+	<div 
+	class="single" 
+	*ngFor="let character of requestCharacters">
+		<button type="button"
+		(click)="acceptRequest(character._id)">
+			approve
+		</button>
+		<button  type="button"
+		(click)="removeRequest(character._id)" >
+			remove
+		</button>
+		<button 
+		type="button" 
+		(click)="_router.navigate(['/add-character/'+character._id])" >
+			edit
+		</button><br><br>
+
+		<h3>Name : {{character.name}}</h3>		
+		<h3>Actor : {{character.playedBy}}</h3>	
+		<h4>Status :{{character.status}}</h4>	
+		<p> Description :{{character.description}}</p><br>
+		<h4>Character Image</h4>
+		<img [src]="character.image" alt="image may not be valid">
+
+	</div>
+</div>

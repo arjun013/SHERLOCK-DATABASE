@@ -1,0 +1,89 @@
+
+.allEpisodes{
+	color: white;
+	width: 100%;
+	min-height: 80vh;
+	display: flex;
+	background: #0009;
+}
+
+.search{
+	position: absolute;
+	right: 0;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.search input{
+	height: 40px;
+	width: 400px;
+	max-width: 90vw;
+	outline: none;
+	border:1px solid black;
+	padding: 0 20px;
+}
+
+.result{
+	background: #f1f1f1;
+	border:1px solid white;
+	padding: 20px;
+	width: 100%;
+	color: black;
+}
+.search a{
+	display: block;
+	text-decoration: none;
+}
+
+.seasonList{
+	width: 100%;
+	background: #0009;
+	padding-top: 10vh;
+}
+.season{
+	padding: 10px 0 10px 4rem;
+	border:2px solid white;
+	margin-bottom: 10px;
+}
+.season button{
+	position: absolute;
+	left: 1rem;
+	padding: 0 8px;
+	background: none;
+	color: white;
+	font-size: 30px;
+	border: 1px solid white;
+	outline: none;
+	cursor: pointer;
+}
+.episode{
+	padding:10px 0px;
+	width: 100%;
+}
+.hideEpisodes{
+	visibility: hidden;
+	padding: 0;
+	height: 0;
+}
+hr{
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+a{
+
+	display: block;
+	color: gold;
+}
+@media (min-width: 700px){
+	.episode{
+		padding:10px 20px;
+	}
+	.hideEpisodes{
+		visibility: hidden;
+		padding: 0;
+		height: 0;
+	}
+	a{
+		display: inline;
+	}
+}

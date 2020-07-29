@@ -1,0 +1,15 @@
+
+h3{
+	text-align: center;
+	color: #ddd;
+}
+
+span{
+	padding: 2px 5px;
+	/*border:1px solid white;*/
+	margin-right: 2px;
+	background: black;
+}
+sub{
+	font-size: 24px;
+}

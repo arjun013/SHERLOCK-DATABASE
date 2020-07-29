@@ -1,0 +1,81 @@
+
+<form class="sign-form" [formGroup]="loginForm" 
+(ngSubmit) = "addUser()"  >
+	<h2>BE SHERLOCKED</h2>
+	<hr>
+
+
+	<div class="name">
+		<input type="text" 
+		formControlName="name" 
+		[class.invalidField]=
+		"loginForm.get('name').invalid &&loginForm.get('name').touched"
+		required >
+		<label for="name">Name</label>	
+	</div>
+
+
+	<div class="mail">
+		<div 
+			*ngIf="loginForm.get('email').invalid &&loginForm.get('email').touched">
+			<small 
+			*ngIf = "loginForm.get('email').errors?.required"> enter your email</small>
+			<small 
+			*ngIf = "loginForm.get('email').errors?.pattern"> not a valid format</small>
+		</div>
+		<input type="text" 
+		formControlName="email"  
+		[class.invalidField]=
+		"loginForm.get('email').invalid &&loginForm.get('email').touched"
+		required >
+		<label for="username">Email</label>	
+	</div>
+
+
+	<div class="mobile">
+		<div 
+			*ngIf="loginForm.get('mobile').invalid &&loginForm.get('mobile').touched">
+			<small 
+			*ngIf = "loginForm.get('mobile').errors?.required"> enter your mobile no.</small>
+			<small 
+			*ngIf = "loginForm.get('mobile').errors?.min
+				||loginForm.get('mobile').errors?.max"> 10 digit needed</small>
+		</div>
+		<input type="number" 
+		formControlName="mobile"  
+		[class.invalidField]=
+		"loginForm.get('mobile').invalid &&loginForm.get('mobile').touched"
+		required >
+		<label for="mobile">Mobile</label>	
+	</div>
+
+
+	<div class="uname">
+		<input type="text" 
+		formControlName="username"  
+		[class.invalidField]=
+		"loginForm.get('username').invalid &&loginForm.get('username').touched"
+		required >
+		<label for="username">Username</label>	
+	</div>
+
+
+	<div class="pass">
+		<div 
+			*ngIf="loginForm.get('password').invalid &&loginForm.get('password').touched">
+			<small 
+			*ngIf = "loginForm.get('password').errors?.minlength">6 characters required</small>
+			<small 
+			*ngIf = "!loginForm.get('password').errors?.minlength&&loginForm.get('password').errors?.pattern"> 1 Small & capital Letter & digit</small>
+		</div>
+		<input type="password" 
+		formControlName="password"   
+		[class.invalidField]=
+		"loginForm.get('password').invalid &&loginForm.get('password').touched"
+		required >
+		<label for="password">Password</label>
+	</div>
+	
+	<button type="submit" 
+	[disabled]="loginForm.invalid"> SIGNUP </button>
+</form>

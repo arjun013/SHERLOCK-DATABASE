@@ -1,0 +1,67 @@
+<div class="singleEpisode" 
+	 style="background-image: url({{episodeData.imageUrl}})">
+	<div class="dataContainer">
+		
+		<a routerLink="/episodes" id="back"> BACK </a>
+
+		<h1>{{episodeData.title}}</h1> 
+		<h1 
+		*ngIf = "episodeData.averageRating"><small>SDB RATING : 
+		{{episodeData.averageRating}}/5 
+		({{episodeData.rating.length}}
+		 {{episodeData.rating.length>1?'Ratings':'Rating'}} )</small> 
+		</h1> 
+		<h2 *ngIf = "!episodeData.averageRating">No Ratings </h2> 
+		<br><br>
+		<a routerLink="/admin/{{episodeData._id}}" 
+		*ngIf="_authService.getUser()">Edit</a>
+		<h3><pre>{{episodeData.season}}      Episode {{episodeData.episodeNumber}}</pre></h3> 
+
+		<p class="lead">{{episodeData.plot}}</p>
+		<br><br> <hr> <br>
+
+		<form class="review">
+			<h2>Your Rating {{userRating}}/5</h2>
+			<h1> {{userRating?'Change':'Give'}} Your Rating </h1>
+				<button 
+				type="button" 
+				class="rate" 
+				(click) = "giveRating(1)"
+				[ngClass]="userRating >= 1 ? 'rated' : ''"
+				>1</button>
+
+				<button 
+				type="button" 
+				class="rate" 
+				(click) = "giveRating(2)" 
+				[ngClass]="userRating >= 2 ? 'rated' : ''"
+				>2</button>
+
+				<button 
+				type="button" 
+				class="rate" 
+				(click) = "giveRating(3)" 
+				[ngClass]="userRating >= 3 ? 'rated' : ''"
+				>3</button>
+
+				<button 
+				type="button" 
+				class="rate" 
+				(click) = "giveRating(4)" 
+				[ngClass]="userRating >= 4 ? 'rated' : ''" 
+				>4</button>
+
+				<button 
+				type="button" 
+				class="rate rate5" 
+				(click) = "giveRating(5)" 
+				[ngClass]="userRating === 5 ? 'rated' : ''"
+				>5</button>
+			
+		</form>
+		<br><br> <hr> <br>
+		<div class="comments">
+			<app-comments></app-comments>
+		</div>
+	</div>
+</div>

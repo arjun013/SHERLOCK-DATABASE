@@ -1,0 +1,54 @@
+
+
+
+
+<div class="addCharacter">
+	<form (ngSubmit)="addCharacter()"
+	 #characterForm="ngForm"
+	 enctype="multipart/form-data">
+		<div>
+			<h2>{{title}}</h2>
+		</div>
+		<hr>
+		<div>
+			<label for="name">Name of Character</label>
+			<input type="text" name="name" required  
+			[(ngModel)]="characterData.name"> 
+		</div>
+
+		<div>
+			<label for="actor">Played By</label>
+			<input type="text" name="actor" required  
+			[(ngModel)]="characterData.playedBy"> 
+		</div>
+
+		<div>
+			<label for="description">Description</label>
+			<input type="text" name="description" required  
+			[(ngModel)]="characterData.description"> 
+		</div>
+		<div>
+			<label for="aliveOrDead">Status</label>
+			<select name="aliveOrDead" 
+			required 
+			[(ngModel)]="characterData.status">
+				<option value="unknown" selected>UNKNOWN</option>
+				<option value="alive">ALIVE</option>
+				<option value="dead">DEAD</option>
+			</select>
+		</div>
+
+
+		<div>			
+			<label for="image">Image</label>
+			<input type="text" name="image" 
+			[(ngModel)]="characterData.image"
+			required  >
+		</div>
+		<button 
+		type="submit" 
+		[disabled]="characterForm.form.invalid" 
+		>Submit</button>
+	</form>
+</div>
+

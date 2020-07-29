@@ -1,0 +1,47 @@
+
+
+<div class="addEpisode">
+	<form (ngSubmit)="addEpisode()" #episodeForm="ngForm">
+		<div>
+			<h2>{{title}}</h2>
+		</div>
+		<hr>
+		<div>
+			<label for="season">SEASON</label>
+			<select name="season" required [(ngModel)]="episodeData.season">
+				<option value=""> --select--</option>
+				<option value="Season 1"> Season 1</option>
+				<option value="Season 2"> Season 2</option>
+				<option value="Season 3"> Season 3</option>
+				<option value="Season 4"> Season 4</option>
+				<option value="Special"> Special</option>
+			</select>
+		</div>
+
+		<div>
+			<label for="episodeNumber">EPISODE</label>
+			<select name="episodeNumber" required [(ngModel)]="episodeData.episodeNumber">
+				<option value=''> --select--</option>
+				<option value=1> Episode 1</option>
+				<option value=2> Episode 2</option>
+				<option value=3> Episode 3</option>
+			</select>
+		</div>
+
+		<div>			
+			<label for="title">TITLE</label>
+			<input type="text" name="title" required  [(ngModel)]="episodeData.title"> 
+		</div>
+
+		<div>			
+			<label for="plot">PLOT</label>
+			<textarea rows="7" cols="20" name="plot" required  [(ngModel)]="episodeData.plot"></textarea>
+		</div>
+
+		<div>			
+			<label for="imageUrl">IMAGE URL</label>
+			<input type="text" name="imageUrl" required  [(ngModel)]="episodeData.imageUrl">
+		</div>
+		<button type="submit" [disabled]="episodeForm.form.invalid" >SUBMIT</button>
+	</form>
+</div>

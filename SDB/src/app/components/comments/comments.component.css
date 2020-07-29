@@ -1,0 +1,40 @@
+
+input{
+	width: 100%;
+	height: 50px;
+	margin-top: 20px ;
+	padding: 0 20px;
+	border:none;
+	border-bottom: 2px solid grey;
+	background: #eee;
+	font-size: 18px;
+	outline: none;
+}
+
+.submitComment{
+	position: absolute;
+	outline: none;
+	border:none;
+	background: #444;
+	color: #ccc;
+	font-weight: bold;
+	height: 50px;
+	width: 5rem;
+	margin: 20px 0 0 -5rem;
+}
+
+button:disabled{
+	visibility: hidden;
+}
+
+.commentList{
+	width: 100%;
+	background: #eee;
+	color: #000;
+}
+.singleComment{
+	padding: 10px;
+}
+.singleComment h4{
+	padding: 10px 20px 20px 20px;
+}

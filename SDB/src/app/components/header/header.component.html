@@ -1,0 +1,74 @@
+<nav class="navbar">
+	<a routerLink=""><h1 class="nav-brand">SDB</h1></a>
+	<button class="nav-icon" (click)="navChange()">
+		<div class="ham"></div>
+		<div class="ham"></div>
+		<div class="ham"></div>
+	</button>	
+	<ul class="navbar-nav" 
+		[class.responsive]="navChangeValid">
+
+		<li class="nav-item">
+			<a class="nav-link"
+			 *ngIf="!_authService.loggedIn()"  
+			 routerLink="/" 
+			 [routerLinkActiveOptions]="{ exact: true }" 
+			 routerLinkActive="active">Login </a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" 
+			*ngIf="!_authService.loggedIn()"  
+			routerLink="/signup" 
+			routerLinkActive="active">Sign Up </a>
+		</li>
+		
+		<li class="nav-item">
+			<a class="nav-link" routerLink="/episodes"
+			 routerLinkActive="active"
+			 *ngIf="_authService.loggedIn()">Episodes</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" routerLink="/characters"
+			 routerLinkActive="active"
+			 *ngIf="_authService.loggedIn()">Characters</a>
+		</li>
+
+		<li class="nav-item">
+			<a routerLink="/add-character"  
+			*ngIf="_authService.loggedIn()"
+			routerLinkActive="active" >Add Character</a>
+		</li>
+
+		<li class="nav-item">
+			<a routerLink="/admin"  
+			*ngIf="_authService.getUser()"
+			routerLinkActive="active" >Add Episode</a>
+		</li>
+
+		<li class="nav-item">
+			<a routerLink="/requests"
+			*ngIf="_authService.getUser()"
+			routerLinkActive="active" 
+			(click)="requestCharacters=[]">
+			Requests
+			<span *ngIf ="requestCharacters.length">({{requestCharacters.length}})</span>
+			</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" routerLink="/about"
+			 routerLinkActive="active">About</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link" 
+			*ngIf="_authService.loggedIn()" 
+			(click) = "logoutUser()"  
+			routerLink="/" >Logout </a>
+		</li>
+	</ul>
+
+
+</nav>

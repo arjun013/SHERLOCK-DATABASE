@@ -1,0 +1,47 @@
+
+<div class="main">
+
+<div class="characters">
+
+	<form 	class="search"  >
+		<input 
+		type="text" 
+		name="searchBox"  
+		placeholder="search character ..." 
+		(keyup)="searchCharacter()" 
+		(focusout)="hideAgain()"
+		[(ngModel)] = "searchWord"
+		>
+		<div
+		(mouseover)="hideResult=false" 
+		(mouseout)="hideResult=true"		 
+		(focusout)="searchWord=''"
+		*ngIf="searchWord">
+			 
+			<a 
+			*ngFor ="let result of searchResult"
+			routerLink="/character/{{result._id}}">
+				<h3 
+				class="result">{{result.name}}</h3>
+			</a>
+			
+		</div>
+	</form>
+
+	<div *ngFor="let character of characters">
+
+		<div class="card">
+
+			<div class="card-head">
+				<img [src]="character.image">				
+			</div>
+
+			<div class="card-title">		
+				<a routerLink="/character/{{character._id}}"><h3>{{character.name}}</h3></a>				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+</div>

@@ -1,0 +1,54 @@
+
+<div class="typeComment">
+	<form (ngSubmit)="postComment()" #commentForm="ngForm">
+
+		<input type="text" 
+		name="userComment" 
+		[(ngModel)]="commentData.commentMatter" 
+		placeholder="add a review..." 
+		required>
+
+		<button 
+		[disabled]="!commentData.commentMatter.trim()" 
+		class="submitComment">POST IT</button>
+		<div class="commentList" 
+		*ngIf="allComments.length>0">
+			<div 
+			*ngFor="let comment of allComments ; index as i" 
+			class="singleComment">
+				<h2>{{comment.user}}</h2>
+<!-- 				<button 
+				type="button" 
+				*ngIf = "_authService.getActiveUser()===comment.user" 
+				(click) ="editComment(comment,i)" >
+					<small>Edit</small> 
+				</button> -->
+
+				<button 
+				type="button"
+				*ngIf = "_authService.getActiveUser()===comment.user||_authService.getUser()" 
+				(click) = "deleteComment(comment)" >
+					<small>Delete</small> 
+				</button>
+<!-- 				<div class="editInput" 
+					[hidden]="edittedMatter[i]==='' ">
+					<input  
+					type="text" 
+					name="comment.id"
+					
+					[(ngModel)]="edittedMatter[i]" 
+					(focusout) ="edittedMatter[i]=''"
+					required>
+					<button 
+					type="button">submit</button>
+					<button 
+					type="button">cancel</button>
+				</div> -->
+				
+				<h4 
+				[hidden]="!edittedMatter[i]==='' ">{{comment.commentMatter}}</h4>
+				<hr>
+			</div>
+		</div>
+	</form>
+</div>

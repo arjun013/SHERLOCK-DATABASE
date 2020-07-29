@@ -1,0 +1,30 @@
+
+.charRequests{
+	color: white;
+	width: 100%;
+	min-height: 80vh;
+	background: #0009;
+	padding: 5vh 20px;
+}
+.single{
+	border: 2px solid #aaa;
+	padding: 20px 5vw;
+	margin-bottom: 10px;
+}
+
+h2{
+	text-align: center;
+}
+
+button{
+	padding: 5px;
+	outline: none;
+	border:none;
+	background: #777;
+	color: white;
+	cursor: pointer;
+	margin-right: 2px;
+}
+img{
+	max-width: 90%;
+}

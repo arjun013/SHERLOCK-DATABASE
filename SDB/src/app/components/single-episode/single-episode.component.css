@@ -1,0 +1,72 @@
+
+.singleEpisode{
+	color: white;
+	min-height: 80vh;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.dataContainer{
+	min-height: 80vh;
+	background: #000c;
+	padding: 60px 30px;
+}
+a{
+	color: white;
+	background: #444;
+	text-decoration: none;
+	font-size: 1rem;
+	border: 1px solid white;
+	padding: 10px 20px;
+}
+#back{
+	position: absolute;
+	margin-top: -50px;
+
+}
+
+h1{
+	color: gold;
+	margin-bottom: 20px;
+}
+
+h3{
+	margin-top: 30px;
+	background: #ccc;
+	color: #222;
+	padding: 10px;
+}
+
+.lead{
+	margin-top: 20px;
+	font-size: 20px;
+	color: #ccc;
+}
+.review{
+	padding: 20px 0;
+}
+
+.rate{
+	padding: 0 10px;
+	background: none;
+	height: 30px;
+	border: 1px solid white;
+	outline: none;
+	color: white;
+	margin-right: 2px;
+	cursor: pointer;
+}
+.rated{
+	background: gold;
+	color: black;
+}
+
+@media (min-width: 700px){
+	.dataContainer{
+		/*width: 80%;*/
+		padding: 4rem 10%;
+	}
+	a{
+		margin-top: -3rem;
+	}
+}

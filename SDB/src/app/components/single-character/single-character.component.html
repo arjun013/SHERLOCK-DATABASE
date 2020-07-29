@@ -1,0 +1,33 @@
+
+<div class="single-character">
+	<div class="character-data">
+
+
+		<div class="basics">
+			
+			<div>
+
+				<div *ngIf="_authService.getUser()" >
+					<button  type="button" >
+						remove
+					</button>
+					<button 
+					type="button" 
+					(click)="_router.navigate(['/add-character/'+characterData._id])" >
+						edit
+					</button><br><br>
+				</div>
+
+				<h1>{{characterData.name}}</h1>
+				<h2>Actor : {{characterData.playedBy}}</h2>
+				<h4>Status : {{characterData.status}}</h4>
+			</div>
+		</div>
+		<div class="image">
+			<img [src]="characterData.image">			
+		</div>
+		<div class="description">
+			<p> {{characterData.description}} </p>
+		</div>
+	</div>
+</div>
